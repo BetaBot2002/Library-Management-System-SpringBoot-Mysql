@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,300&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* utility classed */
+.flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.py-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    background-color: rgba(164, 163, 163, 0.819);
+}
+
+/* BookDetails */
+
+/* Header Styles */
+header {
+    background-color: #525252;
+    color: #fff;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Book Details Styles */
+.book-details {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-left: 1.5rem;
+    margin-top: 2rem;
+}
+
+.description {
+    width: 100%;
+    /* padding: 0.5rem 1.5em; */
+    padding-top: 0.5rem;
+    padding-left: 1.5rem;
+}
+
+.descArea {
+    padding: 10px;
+    border: 0.5px dashed black;
+    word-wrap: break-word;
+}
+
+.book-details img {
+    border-radius: 10px;
+    max-width: 300px;
+    margin-right: 2rem;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.book-details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.book-details p {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background: #000;
+    color: #fff;
+    font-weight: lighter;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: #21222a;;
+}
+
+/* subSearchComponent */
+
+.searchview {
+    width: 100%;
+    height: 100%;
+    height: 100vh;
+    display: flex;
+    position: fixed;
+    /* justify-content: space-between; */
+}
+
+.searchview .headerview {
+    width: 30vw;
+}
+
+.headerview{
+    height: 95vh;
+    overflow-y: scroll;
+}
+
+input[type=text] {
+    width: 20vw;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: black;
+    outline: none;
+    border: none;
+}
+
+input[type=text]:focus {
+    outline: 3px solid #3dc5ffce;
+}
+
+.headerview {
+    font-weight: bolder;
+    background-color: #606060;
+    color: #fff;
+    padding: 1rem;
+}
+
+.filter>p,
+.exclusivfilter {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* searchResult */
+.search {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+.view {
+    width: 100%;
+    padding: 2vw;
+    overflow-y: scroll;
+}
+
+.books {
+    display: flex;
+    column-gap: 5vw;
+    row-gap: 3vh;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 5vh;
+    padding: 0px 10px;
+}
+
+.booksCard {
+    width: 1457px;
+    height: max-content;
+    width: fit-content;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.bookDetails {
+    width: 300px;
+    height: 170px;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    padding: 5px 10px;
+    padding-bottom: 10px;
+}
+
+.bookDetails::-webkit-scrollbar {
+    display: none;
+}
+
+.bookDetails>h3 {
+    font-size: 18px;
+    width: 100%;
+}
+
+.bookDetails>h4 {
+    font-size: 15px;
+    font-weight: 400;
+    width: 100%;
+}
+
+.image-container {
+    max-height: 300px;
+    overflow-y: hidden;
+}
+
+.imageContent {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    background: #000;
+    border-radius: 50%;
+}
+
+.imageContent>img {
+    width: 300px;
+    height: 310px;
+}
+
+.searchError {
+    width: 100%;
+    margin-top: 7vh;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Alternative {
+    padding: 30px;
+}
+
+
+/* book */
+#container {
+    max-width: 80%;
+    margin: 10px auto;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+
+#container h1 {
+    font-family: Georgia, serif;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: start;
+}
+
+#container .img-container {
+    max-width: 200px;
+    margin-right: 40px;
+    float: left;
+}
+
+#container .img-container img {
+    max-width: 200px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#container .img-container img:hover {
+    filter: brightness(0.8);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.btn-container button {
+    padding: 10px 20px;
+    background-color: #282a36;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-container button:hover {
+    background: #505363;
+}
+
+.btn {
+    background-color: #282a36;
+    color: aliceblue;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #505363;
+}
+
+#container p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 0;
+    line-height: 1.8;
+}
+
+#container table {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 20px !important;
+}
+
+#container tr {
+    margin-bottom: 5px !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: #555 !important;
+}
+
+.keywords {
+    font-size: 20px;
+}
+
+.keywords a {
+    color: blue;
+    text-decoration: underline;
+}

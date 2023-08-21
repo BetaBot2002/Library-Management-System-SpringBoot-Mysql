@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 
+.pdfViewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #404040;
+}
+
+#header {
+    background: #404040;
+    position: absolute;
+    bottom: 2vh;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+#header > ul {
+    display: flex;
+    gap: 2vw;
+    list-style-type: none;  
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+}
+
+#buttons {
+    top: 50%;
+    background: #000;
+position: absolute;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 20px;
+z-index: 9999;
+}
+
+#prev_page>span,
+#next_page>span {
+    font-size: 2.3rem;
+    border-radius: 50%;
+    color: rgb(10, 9, 38);
+    color: #404040;
+
+    cursor: pointer;
+}
+
+#header>ul {
+    list-style-type: none;
+}
+
+#zoom_in>i,
+#zoom_out>i {
+    cursor: pointer;
+}
+
+*/
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+#pdfViewArea {
+    position: relative;
+    display: none;
+}
+
+#Cross {
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
+    font-size: 40px;
+    color: #ff2020;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999999 !important;
+}
+
+#downloadbtn {
+    position: absolute;
+    right: 6vw;
+    top: 2vh;
+    font-size: 40px;
+    color: #6efa3f;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999999 !important;
+}
+
+#Cross:hover {
+    transform: rotate(90deg);
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+#pdfViewArea>div>iframe {
+    width: 100vw;
+    height: 99vh;
+    /* z-index: -1; */
+}
+
+.overlay {
+    position: absolute;
+    background: transparent;
+    width: 98vw;
+    height: 100vh;
+}
+
+.inner-overlay {
+    width: 300px;
+    height: 100vh;
+    position: absolute;
+    background: transparent;
+    right: 1.12vw;
+}
+
+.mobile-view {
+    display: none;
+}
+
+/* Apply styles only when the screen width is 600 pixels or less */
+@media (max-width: 980px) {
+    .overlay{
+        display: none;
+    }
+
+    iframe {
+        display: none;
+    }
+
+    .mobile-view {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        flex-direction: column;
+        gap: 10px;
+        background: #282a36;
+        align-items: center;
+        justify-content: center;
+        color: aliceblue;
+        text-align: center;
+        padding: 30px;
+    }
+
+    #downloadbtn{
+        display: none;
+    }
+    /* Add additional styles here */
+}

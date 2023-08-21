@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    /* color: white; */
+    text-decoration: none;
+}
+
+.submenu-links {
+    color: white;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftContaineradmin {
+    width: 25%;
+    height: 100vh;
+    background: #000;
+    position: static;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar-inner-wrapper {
+    padding: 10px 20px;
+}
+
+.sidebar-inner-wrapper .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sidebar-inner-wrapper .logo>img {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sidebar-inner-wrapper {
+    margin-top: 2vh;
+}
+
+.sidebar-inner-wrapper .links ul {
+    list-style-type: none;
+}
+
+.sidebar-inner-wrapper .links ul li {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    margin-bottom: 2vh;
+    /* transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); */
+}
+
+.sidebar-inner-wrapper .links ul li:hover {
+    outline: 2px solid #52a7d8;
+    color: #52a7d8;
+    cursor: pointer;
+}
+
+.sidebar-inner-wrapper .links ul li ul li:hover {
+    outline: 2px solid #09cc64 !important;
+    color: #09cc64 !important;
+    background: #191a21;
+    cursor: pointer;
+}
+
+.sublinks-Container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inner-links>li>a {
+    color: white;
+}
+
+.sublinks-Container>span {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#sublinks {
+    margin-top: 10px;
+}
+
+.submenulinks {
+    height: 0;
+    transition: height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* sidebar end */
+
+/* header */
+.rightContainer {
+    width: 75%;
+    height: 100%;
+    /* background: red; */
+    overflow-y: scroll;
+}
+
+.rightContainer .header {
+    width: 100%;
+    background: #ccc;
+    padding: 10px 20px;
+}
+
+.rightContainer .header .header-inner-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightContainer .header .header-inner-wrapper h1 {
+    font-size: 24px;
+}
+
+.rightContainer .header .header-inner-wrapper .header-right-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.rightContainer .header .header-inner-wrapper .header-right-content .notifications {
+    position: relative;
+}
+
+.rightContainer .header .header-inner-wrapper .header-right-content .notifications i {
+    font-size: 25px;
+    color: blue;
+    cursor: pointer;
+}
+
+.rightContainer .header .header-inner-wrapper .header-right-content .notifications #notifications-dot {
+    width: 10px;
+    height: 10px;
+    background: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
+.adminAccount {
+    position: relative;
+}
+
+.adminAccount img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 4vh;
+    right: 0.75vw;
+    color: rgb(255, 255, 255);
+    display: none;
+}
+
+.adminAccount:hover>.account-options,
+.account-options:hover,
+.adminAccount:hover .arrow {
+    display: block;
+}
+
+.account-options {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    top: 5vh;
+    color: #000;
+    border-radius: 10px;
+    right: 0;
+    list-style-type: none;
+    display: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.account-options {
+    width: 100px;
+    text-align: center;
+}
+
+.account-options>li:nth-child(1) {
+    border-bottom: 1px solid #b4b4b4;
+}
+
+.account-options li {
+    text-align: start;
+    font-size: 15px;
+    padding: 10px 10px;
+}
+
+.account-options li a:hover,
+.account-options li button:hover {
+    color: #52a7d8 !important;
+}
+
+.notifications {
+    position: relative;
+}
+
+.notifications:hover>.notifications-area,
+.notifications-area:hover {
+    display: block;
+}
+
+.notifications-area {
+    display: none;
+    border-radius: 10px;
+    width: 300px;
+    /* height: 300px; */
+    background: #282a36;
+    color: aliceblue;
+    position: absolute;
+    top: 3.5vh;
+    right: 0;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+#notifications-content {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#notifications-content:last-child {
+    border-bottom: none;
+}
+
+#notifications-content:hover {
+    color: #52a7d8;
+}
+
+/* header ends */
+
+/* breadcrumbs */
+main {
+    padding: 10px 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+.breadCrumbs {
+    padding: 10px 0;
+}
+
+.breadCrumbs>p>a {
+    color: #52a7d8;
+    margin-right: 8px;
+}
+
+.breadCrumbs>p>span {
+    margin-left: 8px;
+    opacity: 0.8;
+}
+
+.breadCrumbs>p>a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* breadcrumbs ends */
+
+/* details */
+
+.details {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.detail-inner-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5vh;
+}
+
+.details-card {
+    padding: 20px 30px;
+    width: 22vw;
+    background: whitesmoke;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 10px;
+}
+
+.details-card>div {
+    width: 100%;
+    text-align: right;
+}
+
+.details-card>div>h1 {
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+.icons {
+    aspect-ratio: 1/1;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* details ends */
+
+
+/* table */
+/* Set max width, center and add padding to the main container */
+
+/* Style the table */
+.registrations {
+    width: 100%;
+
+}
+
+.registrations-inner-wrapper {
+    width: 100%;
+    background: rgb(237, 237, 237);
+    padding: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 10px;
+}
+
+.registrations {
+    margin: 2vh 0;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* Style the table header and cells */
+
+.registrations th {
+    background: #191a21;
+    color: aliceblue;
+    padding: 10px;
+    border: none;
+}
+
+.registrations td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style the table header */
+.registrations thead th {
+    background-color: #f2f2f2;
+    font-weight: normal;
+}
+
+/* Alternate row colors for the table body */
+.registrations tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.registrations tbody tr:nth-child(odd) {
+    background-color: #cbcbcb;
+}
+
+.btn {
+    padding: 10px 20px;
+    background: #191a21;
+    border-radius: 10px;
+    border: none;
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    cursor: pointer;
+}
+
+.btn-green {
+    background: #01bd65 !important;
+}
+
+.btn-green:hover,
+.btn-red:hover {
+    filter: brightness(1.2);
+}
+
+.btn-red {
+    background: #c0002de2 !important;
+}
+
+
+/* table ends  */
+
+/* Add another admin modal starts */
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* Form styles */
+.modal-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form label {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-form #username {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: 2px solid #282a36;
+    border-radius: 20px;
+    font-size: 20px;
+    width: 100%;
+}
+
+.modal-form #username:focus {
+    outline: 2px solid #52a7d8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modal-form .password {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: 2px solid #282a36;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.modal-form .password:focus {
+    outline: 2px solid #52a7d8;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.modal-form input[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.modal-form input[type="submit"]:hover {
+    background-color: #39e78a;
+}
+
+/* Note styles */
+.note {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.note>.marquee {
+    width: 100%;
+    /* border: 1px solid #282a36; */
+    padding: 5px;
+    border-radius: 20px;
+    background: #ccc;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.cross-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #000000;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Add another admin modal ends */
+
+/* chart.js */
+.chartContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.chart2 {
+    width: 500px !important;
+    height: 300px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.chart1 {
+    display: flex;
+    justify-content: center;
+    width: 500px !important;
+    height: 100% !important;
+}
+
+/* chart.js ends */

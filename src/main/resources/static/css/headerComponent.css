@@ -1,0 +1,170 @@
+:root {
+    --primary-bg-color: #282a36;
+    --primary-text-color: #ffffff;
+    --secondry-bg-color: #191a21;
+    --light-gray: #ccc;
+    --hover-color: #434552e9;
+    --dropdown-bgcolor: #e9dcdcf0;
+    --success-color: #d4edda;
+}
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* user header */
+.header {
+    padding: 10px 20px;
+    background: var(--primary-text-color);
+    color: #191a21;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+.user-profile-piture {
+    position: relative;
+}
+
+.user-profile-piture>img {
+    border-radius: 50%;
+}
+
+.user-profile-piture:hover>.hover-dropdown,
+.hover-dropdown:hover {
+    display: block;
+}
+
+.hover-dropdown {
+    display: none;
+    background: var(--dropdown-bgcolor);
+    position: absolute;
+    border-radius: 10px;
+    top: 4.2vh;
+    right: 0;
+    z-index: 999999;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.hover-dropdown > button {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #191a21;
+}
+
+.hover-dropdown button:hover {
+    color: #454651;
+    color: var(--primary-bg-color);
+}
+
+.user-profile-piture img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* user headerEnds */
+
+
+/* admin header */
+.header {
+    width: 100%;
+    background: #ccc;
+    padding: 10px 20px;
+    z-index: 99999 !important;
+}
+
+.header .header-inner-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .header-inner-wrapper h1 {
+    font-size: 24px;
+}
+
+.header .header-inner-wrapper .header-right-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+}
+
+.adminAccount {
+    position: relative;
+}
+
+.adminAccount img {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 4vh;
+    right: 0.75vw;
+    color: rgb(255, 255, 255);
+    display: none !important;
+}
+
+.adminAccount:hover>.account-options,
+.account-options:hover,
+.adminAccount:hover .arrow {
+    display: block !important;
+    z-index: 99999 !important;
+}
+
+.account-options {
+    position: absolute;
+    background: rgb(255, 255, 255);
+    top: 5vh;
+    color: #000;
+    border-radius: 10px;
+    right: 0;
+    list-style-type: none;
+    display: none;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.account-options {
+    width: 100px;
+    text-align: center;
+}
+
+.account-options>li:nth-child(1) {
+    border-bottom: 1px solid #b4b4b4;
+}
+
+.account-options li a {
+    text-decoration: none;
+    color: #191a21 !important;
+}
+
+.account-options li form:hover>i {
+    color: #52a7d8 !important;
+}
+
+.account-options li form button {
+    padding: 0;
+    color: #191a21 !important;
+}
+
+.account-options li {
+    text-align: start;
+    font-size: 15px;
+    padding: 10px 10px;
+}
+
+.account-options li a:hover,
+.account-options li button:hover {
+    color: #52a7d8 !important;
+}

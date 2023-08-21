@@ -1,0 +1,19 @@
+                            /* Style the input element */
+                            #searchInput {
+                                width: 20%;
+                                padding: 10px;
+                                font-size: 16px;
+                                border: 1px solid #2a2a2a;
+                                border-radius: 4px;
+                                outline: none;
+                            }
+
+                            /* Optional: Add some additional styles to make it look more professional */
+                            #searchInput::placeholder {
+                                color: #999;
+                            }
+
+                            #searchInput:focus {
+                                border-color: #0066cc;
+                                box-shadow: 0 0 5px rgba(0, 102, 204, 0.5);
+                            }

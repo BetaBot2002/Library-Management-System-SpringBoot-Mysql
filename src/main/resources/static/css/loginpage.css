@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282a36;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profileContainer>img {
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5199e4;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 5vw;
+}
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    box-shadow: 4px 5px 73px 21px rgba(28, 31, 119, 0.72);
+    -webkit-box-shadow: 4px 5px 73px 21px rgba(28, 31, 119, 0.72);
+    -moz-box-shadow: 4px 5px 73px 21px rgba(28, 31, 119, 0.72);
+    /* box-shadow: 0 0 10px rgba(43, 54, 133, 0.5), 0 2px 4px rgba(0, 0, 255, 0.1); */
+    border-radius: 5px;
+    margin: 10px;
+    flex: 1 1 400px;
+    max-width: 350px;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.passField {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    padding-right: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease-in-out;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.passField input[type="password"],
+#password,
+#adminpassword {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+
+#username,
+#adminusername {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+#username:focus,
+#adminusername:focus,
+.passField:focus-within {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+i {
+    cursor: pointer;
+}
+
+#userbtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #11c017;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+#adminbtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #d74b17;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    font-weight: bold;
+}
+
+#adminbtn:hover {
+    background-color: #972d06;
+}
+
+#userbtn:hover {
+    background-color: #3e8e41;
+}
+
+@media screen and (max-width: 768px) {
+    .form {
+        flex-basis: 100%;
+        max-width: none;
+    }
+}
+
+/* modal */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+.modal-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    /* background-color: #fefefe; */
+    background-color: #2f3140f2;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* Close Button */
+.close {
+    display: inline;
+    color: aliceblue;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.close:hover,
+.close:focus {
+    color: rgb(222, 222, 222);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* ------------------------------------------- */
+/*              Forgot Password                */
+/* ------------------------------------------- */
+
+.otp-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.otp-modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    border-radius: 5px;
+}
+
+.otp-cross {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.step {
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button.cancel {
+    background-color: #f44336;
+    margin-left: 5px;
+}
+
+.timer {
+    font-family: Arial, Helvetica, sans-serif;
+    float: right;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.otp-modal .otpSent {
+    width: 100%;
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    background: #87ff8bbd;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.forgotPassword {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#wrong-user {
+    color: rgb(255, 63, 63);
+}
+
+.d-none{
+    display: none;
+}
+
+.forgotPassword > a:hover {
+    text-decoration: underline;
+    color: #7b1a8b;
+    cursor: pointer;
+}
